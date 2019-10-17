@@ -25,8 +25,9 @@ SECRET_KEY = 'ywh$m7+o$%960v#ivgprv#_klx$gm5pboer^7e0d1^l$kkzcsd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','app-ae25ef7f-eff0-469a-8f73-ef2bbd4b6965.cleverapps.io']
-
+ALLOWED_HOSTS = ['app-ae25ef7f-eff0-469a-8f73-ef2bbd4b6965.cleverapps.io']
+# Development
+# '127.0.0.1','localhost',
 
 # Application definition
 
@@ -38,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework', # enable rest framework
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -144,3 +148,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'barriosolidario.customAuthentification.customAuthentification',
 )
+
+
+CORS_ORIGIN_ALLOW_ALL = True
