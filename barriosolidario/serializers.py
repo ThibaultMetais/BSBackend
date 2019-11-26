@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
 class NewsPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsPost
-        fields = '__all__'
+        fields = (*[f.name for f in NewsPost._meta.get_fields()], "from_me")
 
 class HelpPostSerializer(serializers.ModelSerializer):
     class Meta:
