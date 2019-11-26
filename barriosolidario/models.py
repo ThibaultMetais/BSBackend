@@ -33,6 +33,7 @@ class NewsPost(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     picture = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
     location = models.PointField(null=True, blank=True)
+    content = models.TextField(null=False, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=User.objects.get(email='thibault.metais31@gmail.com').id)
     class Meta:
         verbose_name = ('NewsPost')
@@ -43,6 +44,7 @@ class HelpPost(models.Model):
     reference = models.CharField(max_length=100,db_index=True)
     picture = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
     location = models.PointField(null=True, blank=True)
+    content = models.TextField(null=False, blank=True)
     resolved = models.BooleanField(default=True)
     class Meta:
         verbose_name = ('HelpPost')
