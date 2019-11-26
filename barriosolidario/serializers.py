@@ -10,7 +10,7 @@ class NewsPostSerializer(serializers.ModelSerializer):
     from_me = serializers.SerializerMethodField('is_me')
 
     def is_me(self, post):
-      return post.user.id == request.user.id
+      return post.user.id == self.request.user.id
 
     class Meta:
         model = NewsPost
