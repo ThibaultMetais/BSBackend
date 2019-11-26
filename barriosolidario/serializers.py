@@ -10,6 +10,7 @@ class NewsPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewsPost
         fields = (*[f.name for f in NewsPost._meta.get_fields()], "from_me")
+        fields['from_me'] = request.user.id ==
 
 class HelpPostSerializer(serializers.ModelSerializer):
     class Meta:
