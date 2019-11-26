@@ -10,7 +10,7 @@ class UserListCreate(generics.ListCreateAPIView):
 
 class NewsPostListCreate(generics.ListCreateAPIView):
     queryset = NewsPost.objects.all()
-    serializer_class = NewsPostSerializer
+    serializer_class = NewsPostSerializer(data=request.data, context={'request':request}) 
 
 class HelpPostListCreate(generics.ListCreateAPIView):
     queryset = HelpPost.objects.all()
