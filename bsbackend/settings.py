@@ -85,13 +85,13 @@ POSTGRESQL_ADDON_DB='baf26ykjxjqujawk8h6k'
 POSTGRESQL_ADDON_PASSWORD='YAxtbWADgMJb8WaBC33e'
 #APP_HOME='/home/thibault/Documents/barriosolidario/backend/bsbackend/'
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__)).parent.parent.parent
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+MEDIA_ROOT = str(BASE_DIR) + '/media'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = str(BASE_DIR.joinpath('static'))
+STATIC_ROOT = str(BASE_DIR) + '/static'
 
 #STATIC_URL_PREFIX='/static'
 #MEDIA_ROOT=APP_HOME+STATIC_URL_PREFIX+'/storage/'
