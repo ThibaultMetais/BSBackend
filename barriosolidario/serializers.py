@@ -14,7 +14,7 @@ class NewsPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewsPost
-        fields = ('__all__', 'from_me')
+        fields = ('id', 'picture', 'location', 'user', 'from_me')
 
 class HelpPostSerializer(serializers.ModelSerializer):
     class Meta:
