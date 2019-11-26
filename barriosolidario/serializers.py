@@ -7,10 +7,14 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class NewsPostSerializer(serializers.ModelSerializer):
+    from_me = serializers.SerializerMethodField('is_me')
+
+    def is_me(self, post):
+      return post.user.id == request.user.id
+
     class Meta:
         model = NewsPost
-        fields = (*[f.name for f in NewsPost._meta.get_fields()], "from_me")
-        fields['from_me'] = request.user.id ==
+        fields = ('__all__', 'from_me')
 
 class HelpPostSerializer(serializers.ModelSerializer):
     class Meta:
