@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.urls import path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,7 +86,7 @@ POSTGRESQL_ADDON_DB='baf26ykjxjqujawk8h6k'
 POSTGRESQL_ADDON_PASSWORD='YAxtbWADgMJb8WaBC33e'
 #APP_HOME='/home/thibault/Documents/barriosolidario/backend/bsbackend/'
 
-BASE_DIR = Path(__file__).parent.parent.parent
+BASE_DIR = path(__file__).parent.parent.parent
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
