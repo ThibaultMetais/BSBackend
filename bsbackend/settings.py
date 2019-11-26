@@ -83,13 +83,24 @@ POSTGRESQL_ADDON_URI='postgresql://ug16vxoongcrsk0zfnwt:YAxtbWADgMJb8WaBC33e@baf
 POSTGRESQL_ADDON_HOST='baf26ykjxjqujawk8h6k-postgresql.services.clever-cloud.com'
 POSTGRESQL_ADDON_DB='baf26ykjxjqujawk8h6k'
 POSTGRESQL_ADDON_PASSWORD='YAxtbWADgMJb8WaBC33e'
-APP_HOME='/home/thibault/Documents/barriosolidario/backend/bsbackend/'
-STATIC_URL_PREFIX='/static'
+#APP_HOME='/home/thibault/Documents/barriosolidario/backend/bsbackend/'
+
+BASE_DIR = Path(__file__).parent.parent.parent
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
+STATIC_URL = '/static/'
+STATIC_ROOT = str(BASE_DIR.joinpath('static'))
+
+#STATIC_URL_PREFIX='/static'
+#MEDIA_ROOT=APP_HOME+STATIC_URL_PREFIX+'/storage/'
+#MEDIA_URL = STATIC_URL_PREFIX+"/storage/"
+#STATIC_ROOT = APP_HOME+STATIC_URL_PREFIX+'/static/static/'
+
 POSTGRESQL_ADDON_PORT=5432
 POSTGRESQL_ADDON_USER='ug16vxoongcrsk0zfnwt'
-MEDIA_ROOT=APP_HOME+STATIC_URL_PREFIX+'/storage/'
-MEDIA_URL = STATIC_URL_PREFIX+"/storage/"
-STATIC_ROOT = APP_HOME+STATIC_URL_PREFIX+'/static/static/'
+
 
 DATABASES = {
     'default': {
