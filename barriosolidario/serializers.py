@@ -10,7 +10,9 @@ class NewsPostSerializer(serializers.ModelSerializer):
     from_me = serializers.SerializerMethodField('is_me')
 
     def is_me(self, post):
-      return post.user.id == self.context['request'].user.id
+        #return post.user.id == self.context['request'].user.id
+        # We don't have login feature right now (AnonymousUser used), so we are using a temporary solution
+        return str(post.user.id) == "9781200a-4862-4daa-9231-a759c28d7ff7"
 
     class Meta:
         model = NewsPost
