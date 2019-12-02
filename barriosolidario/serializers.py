@@ -20,7 +20,7 @@ class NewsPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewsPost
-        fields = ('id', 'content', 'picture', 'location', 'user', 'from_me', 'username')
+        fields = ('id', 'content', 'picture', 'location', 'user', 'from_me', 'username', 'created')
 
 class HelpPostSerializer(serializers.ModelSerializer):
     class Meta:
