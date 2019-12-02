@@ -33,7 +33,8 @@ class NewsPost(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     picture = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
     location = models.PointField(null=True, blank=True)
-    content = models.TextField(null=False, blank=True)
+    content = models.TextField(null=False, blank=False)
+    created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=User.objects.get(email='thibault.metais31@gmail.com').id)
     class Meta:
         verbose_name = ('NewsPost')
