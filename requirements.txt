@@ -1,5 +1,5 @@
 django
 psycopg2-binary==2.7.4
-pillow==5.1.0
+pillow==9.0.1
 djangorestframework
 django-cors-headers
